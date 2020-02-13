@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send({ Bye: "Yo" });
+  res.send({ Bye: "Yo", hi:"hi" });
 });
 
 // If it is all capital letter,
