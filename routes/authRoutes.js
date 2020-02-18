@@ -13,4 +13,17 @@ module.exports = app => {
   app.get("/", (req, res) => {
     res.send({ res: "h" });
   });
+
+  app.get("/api/current_user", (req, res) => {
+    //passport automatically, attach the user
+    //this display current logged in user info 
+    res.send(req.user);
+  });
+
+  app.get("/api/logout", (req, res) => {
+    //passport kills the cookie in user's browser
+    req.logout();
+    //
+    res.send(req.user);
+  });
 };

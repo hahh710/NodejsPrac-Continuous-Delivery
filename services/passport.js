@@ -40,7 +40,11 @@ passport.use(
           done(null, existingUser);
         } else {
           new Users({
-            googleId: profile.id
+            googleId: profile.id,
+            name: {
+              familyName: profile.name.familyName,
+              givenName: profile.name.givenName
+            }
           })
             .save()
             .then(user => done(null, user));

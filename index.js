@@ -8,7 +8,7 @@ const keys = require("./config/keys.js");
 
 const app = express();
 
-//
+
 app.use(
   cookieSession({
     // we need to add configuration
